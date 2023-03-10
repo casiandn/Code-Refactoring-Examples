@@ -206,6 +206,7 @@ public class HomeAppliance {
      * color
      */
     private String validateColor(String color) {
+        color = color.toLowerCase();
         for (int i = 0; i < colors.length; i++) {
             if (colors[i].equals(color)) {
                 return color;
@@ -224,6 +225,7 @@ public class HomeAppliance {
      * default consumption
      */
     private char validateConsumption(char consumption) {
+        consumption = Character.toUpperCase(consumption);
         if (consumption >= 'A' && consumption <= 'F') {
             return consumption;
         }

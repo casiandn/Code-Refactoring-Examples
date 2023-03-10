@@ -109,7 +109,7 @@ public class HomeApplianceTest {
 
     ////////////// public methods
     /**
-     * Test for the comprobarColor method with a valid color Valid colors:
+     * Test for the ValidateColor method with a valid color Valid colors:
      * "white", "black", "red", "blue", "gray"
      */
     @Test
@@ -120,8 +120,19 @@ public class HomeApplianceTest {
     }
 
     /**
-     * Test case to verify that an instance of HomeAppliance with an invalid
- color has the default color.
+     * Test for the ValidateColor method with a valid color Valid colors:
+     * "white", "black", "red", "blue", "gray" and checks if case-insensitive
+     */
+    @Test
+    public void testValidateColorWithValidColorCaseInsensitive() {
+        String color = "BLUE";
+        HomeAppliance instance = new HomeAppliance(color, HomeAppliance.getDefaultConsumption(), HomeAppliance.getDefaultBasePrice(), HomeAppliance.getDefaultWeight());
+        assertEquals(color.toLowerCase(), instance.getColor());
+    }
+
+    /**
+     * Test case to verify that an instance of HomeAppliance with an invalid color.
+     * color should be the default color
      */
     @Test
     public void testValidateColorWithInvalidColor() {
@@ -131,11 +142,32 @@ public class HomeApplianceTest {
     }
 
     /**
-     * Test case to verify that an instance of HomeAppliance with an invalid
- consumption has the default consumption.
+     * Test case to verify that an instance of HomeAppliance with a valid consumption
      */
     @Test
-    public void testValidateColorWithInvalidConsumption() {
+    public void testValidateConsumptionWithValidConsumption() {
+        char consumo = 'A';
+        HomeAppliance instance = new HomeAppliance(HomeAppliance.getDefaultColor(), consumo, HomeAppliance.getDefaultBasePrice(), HomeAppliance.getDefaultWeight());
+        assertEquals(consumo, instance.getConsumption());
+    }
+    
+    /**
+     * Test case to verify that an instance of HomeAppliance with a valid
+     * consumption but with the letter in lower case. The result should be in capital letter.
+     */
+    @Test
+    public void testValidateConsumptionWithValidConsumptionCaseInsensiive() {
+        char consumo = 'a';
+        HomeAppliance instance = new HomeAppliance(HomeAppliance.getDefaultColor(), consumo, HomeAppliance.getDefaultBasePrice(), HomeAppliance.getDefaultWeight());
+        assertEquals(Character.toUpperCase(consumo), instance.getConsumption());
+    }
+    
+    /**
+     * Test case to verify that an instance of HomeAppliance with an invalid
+     * consumption has the default consumption.
+     */
+    @Test
+    public void testValidateConsumptionWithInvalidConsumption() {
         char consumo = 'G';
         HomeAppliance instance = new HomeAppliance(HomeAppliance.getDefaultColor(), consumo, HomeAppliance.getDefaultBasePrice(), HomeAppliance.getDefaultWeight());
         assertEquals(HomeAppliance.getDefaultConsumption(), instance.getConsumption());
@@ -143,8 +175,8 @@ public class HomeApplianceTest {
 
     /**
      * Test case to verify that the calculateFinalPrice method returns the
- correct price for an instance of HomeAppliance with consumption A and
- weight 10.
+     * correct price for an instance of HomeAppliance with consumption A and
+     * weight 10.
      */
     @Test
     public void testCalculateFinalPriceWithConsumptionAAndWeight10() {
