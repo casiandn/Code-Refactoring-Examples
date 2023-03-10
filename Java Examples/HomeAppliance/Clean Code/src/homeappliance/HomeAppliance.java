@@ -51,7 +51,7 @@ public class HomeAppliance {
      * values.
      */
     public HomeAppliance() {
-        this(DEFAULT_COLOR, DEFAULT_CONSUMPTION, DEFAULT_BASEPRICE, DEFAULT_WEIGHT); //refer to the previously defined constructor, call the parameters (call to another constructor)
+        this(DEFAULT_COLOR, DEFAULT_CONSUMPTION, DEFAULT_BASEPRICE, DEFAULT_WEIGHT);
     }
 
     /**
