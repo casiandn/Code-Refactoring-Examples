@@ -4,7 +4,7 @@ This repository contains examples of code that has been refactored to improve re
 
 ## Directory Structure
 
-Each example is contained in its own top-level directory. Within each example directory, there are subdirectories for the "bad code", "clean code", and "tests".
+Each example is contained in its own top-level directory. Within each example directory, there are subdirectories for the "bad code" and "clean code".
 
 ## Contributing
 
