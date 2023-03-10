@@ -1,6 +1,6 @@
 # Code-Refactoring-Examples
 
-This repository contains examples of code that has been refactored to improve readability and maintainability. Each example includes the original "bad" code, the refactored "clean" code, and tests to ensure that the functionality remains the same.
+This repository contains examples of code that has been refactored to improve readability and maintainability. Each example includes the original "bad" code, the refactored "clean" code, and the test in order to check future updates.
 
 ## Directory Structure
 
